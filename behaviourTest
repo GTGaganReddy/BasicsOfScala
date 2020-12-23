@@ -1,0 +1,31 @@
+trait human {
+  def mainObject: Unit = {
+    println("Humans are us !!")
+  }
+  def civilization:String{}
+}
+trait cat{
+  def mainobject: Unit = {
+    println("Sorry i am \"Selfish\"")
+  }
+  def civilization: String = "no"
+}
+
+class humanBehaviour(name:String) extends human {
+        def civilization: String = s"$name is civilized"
+}
+class catBehaviour(name: String) extends cat{
+  override def civilization: String = s"$name is not civilized"
+}
+object behaviourTest {
+  def main(args: Array[String]) {
+    val x = new humanBehaviour("Ram")
+    val y = new catBehaviour("Sweetie")
+    println("\"HUMAN\"")
+    x.mainObject
+    println(x.civilization)
+    println("\"CAT\"")
+    y.mainobject
+    println(y.civilization)
+  }
+}
